@@ -33,18 +33,20 @@
             </div>
         </div>
     </div>
-    <div style="padding-right:0;padding-left:0" id="demo" class="container carousel slide" data-bs-ride="carousel">
+    <!-- 增加padding-right&left:0，來處理 container裡面內建的padding-right&left:5px -->
+    <div style="padding-right:0;padding-left:0" id="demo" class="container carousel" data-bs-ride="carousel">
 
-        <!-- Indicators/dots -->
+        <!-- 中間下方按鈕 -->
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
             <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
             <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
         </div>
 
-        <!-- The slideshow/carousel -->
-        <!-- data-bs-interval="500" 調整持續時間  -->
+        <!-- 圖片區域 -->
+        <!-- data-bs-interval="5000" 調整持續時間  -->
         <!-- carousel-fade 改成淡入淡出的效果 -->
+        <!-- carousel-slide 改成滑入滑出效果 -->
         <div class="carousel-inner carousel-fade">
             <div class="carousel-item active" data-bs-interval="5000">
                 <img src="https://picsum.photos/id/1011/5472/3648" alt="Los Angeles" class="d-block"
@@ -73,6 +75,7 @@
         </div>
 
         <!-- Left and right controls/icons -->
+        <!-- 左右邊半透明切換按鈕 -->
         <button class="carousel-control-prev" type="button" data-bs-target="#demo"
             data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
@@ -95,6 +98,7 @@
         </div>
     </div>
     <div class="container text-center mt-5">
+        <!-- row裡面也有padding-left&right:5px的效果，以後需要注意。 -->
         <div class="row">
             <div class="col-6">
                 <iframe
