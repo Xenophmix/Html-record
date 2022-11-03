@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+</style>
+
+<body>
+    <div class="container mt-3 text-center">
+        <div class="container-fluid d-flex justify-content-between">
+            <text class="fs-1">ID/Name/刪除</text>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal"
+            data-bs-target="#myModalADD">
+                <i class="fa-solid fa-plus"></i>&nbsp;add
+            </button>
+        </div>
+        <table class="table table-sm mt-3">
+            <thead>
+                <tr class="table-info text-center">
+                    <th>Number</th>
+                    <th>name</th>
+                    <th>刪除</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <tr>
+                    <td>1</td>
+                    <td>amy</td>
+                    <td><button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#myModalEdit">
+                            <i class="fa-sharp fa-solid fa-trash"></i>&nbsp;Del
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>bob</td>
+                    <td><button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#myModalEdit">
+                            <i class="fa-sharp fa-solid fa-trash"></i>&nbsp;Del
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal" id="myModalADD">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">ADD New One</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h3>ADD SOMEONE</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque facilis ipsam quaerat vitae id
+                        mollitia dicta non quos qui minima modi, culpa ab ratione quo, dolorum nesciunt soluta,
+                        voluptates quas?</p>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="myModalEdit">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Are You Sure!?</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h3>Delete</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque facilis ipsam quaerat vitae id
+                        mollitia dicta non quos qui minima modi, culpa ab ratione quo, dolorum nesciunt soluta,
+                        voluptates quas?</p>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
