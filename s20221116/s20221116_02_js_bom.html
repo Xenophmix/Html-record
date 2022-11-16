@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- root element -->
+<html lang="en">
+<!-- element -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- element -->
+    <!-- text -->
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="location"></h1>
+
+    <h2 id="screen"></h2>
+
+    <button type="button" id="To">MyBtn</button>
+
+
+    <h1 id="myH1">test</h1>
+    <script>
+
+        // 練習 抓出location.herf 顯示h1
+        // 練習 抓出screen.width 顯示h2
+        let url = location.href;
+        let scrwidth = window.screen.width;
+        let scrheight = window.screen.height;
+
+        // getElementById('xxx') 抓文件中的ID是xxx的寫入
+        document.getElementById('location').innerHTML = url;
+        document.getElementById('screen').innerHTML = scrwidth + "x" + scrheight;
+        document.getElementById('To').addEventListener('click', function () {
+            console.log('Btn OK!');
+            // assign 連結到其他網站
+            // replace 連接到其他網站，無法上一頁回去
+            // href 切換其他頁面 可使用#id 來前往頁面中指定id的位置
+            location.assign('https://github.com/Xenophmix')
+            location.href('https://github.com/Xenophmix')
+        })
+
+
+
+
+
+        getWidth = window.screen.width;
+        console.log('getWidth', getWidth);
+
+        //    window.alert('123');
+        window.console.log('hello');
+
+        console.log('window.location', window.location);
+        console.log('window.location.host', window.location.host);
+        console.log(window.location.host);
+    </script>
+
+
+
+</body>
+
+</html>
