@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="myText1">Hi</p>
+    <p id="myText2">Hi</p>
+    <p id="myText3">Hi</p>
+    <div id="clock" ></div>
+    
+
+    <script>
+        let i = 1;
+        i = i + 1;
+        // php echo 顯示程式方式
+        // javascript console.log()  顯示程式方式
+        // java vs javascript 兩者完全不同
+        // 牛 vs 牛蒡
+        // . = 的 顯示console裡的i 
+        console.log(i);
+
+        const myText1Input = document.getElementById('myText1');
+        console.log(myText1Input);
+
+
+        // 1.innerText 改文字
+        // 2.textContent 改文字
+        // innerHtml 改成html
+        document.getElementById('myText1').innerText = "12345";
+        document.getElementById('myText2').textContent = "45678";
+        document.getElementById('myText3').innerHTML = "<br>12345<br>";
+        myText1Input.innerText
+
+    </script>
+    <script>
+        const clock = function () {
+            let getDate = new Date();
+            document.getElementById("clock").innerHTML = getDate.toLocaleTimeString(
+                [],
+                { hour: "2-digit", minute: "2-digit", second: "2-digit" }
+            );
+        };
+        setInterval(function () {
+            clock();
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
