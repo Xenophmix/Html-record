@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <H1 id="Num"></H1>
+
+  <script>
+    // 把Number取代成parseInt可以無視小數點，無條件捨去
+    let Numstr1 = prompt("請輸入數字1");
+    let Numstr2 = prompt("請輸入數字2");
+    // Num1 = Number(Numstr1);
+    // Num2 = Number(Numstr2);
+    Num1 = parseInt(Numstr1);
+    Num2 = parseInt(Numstr2);
+
+
+    document.getElementById("Num").innerHTML =
+      "第一個數字為" + Numstr1 + "第二個數字為" + Numstr2 + '&nbsp;加起來總共是' + (Num1 + Num2);
+
+  </script>
+</body>
+
+</html>
