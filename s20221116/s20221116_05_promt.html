@@ -20,11 +20,16 @@
     function AboutYou() {
       let person = prompt("請輸入你的姓名", "Kevin");
       let personnumber = prompt("請輸入你的號碼", "1");
-      if (person != null) {
+      console.log('person and personnumber',person,personnumber);
+      if (person && personnumber != null) {
         document.getElementById("You").innerHTML =
           "Hello " + person + "&nbsp;&nbsp;" + personnumber + "號" + "! 你今天好嗎?";
+      }else{
+        document.getElementById("You").innerHTML =
+          "你沒有輸入內容!!!";
       }
     }
+    
 
     // let myName = prompt('Name ?');
     // console.log(myName);
