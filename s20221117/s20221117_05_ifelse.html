@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    background-color: blueviolet;
+  }
+</style>
+
+<body>
+  <H1 id="You"></H1>
+  <button type="button" onclick="Askme()">問我</button>
+  <script>
+    // let score = 50;
+    // if (score > 80) {
+    //   console.log('A');
+
+    // } else if (score >= 60) {
+    //   console.log('B');
+    // } else {
+    //   console.log('你被當了');
+    // }
+    function Askme() {
+
+      let score = (prompt("請輸入你的分數"));
+      if (score != null && score != "") {
+        if (score == 100) {
+          document.getElementById("You").innerHTML =
+            "你考了" + score + "分最高分!!!!!!";
+          Youstyle.style.color = 'Gold'
+
+        } else if (score > 80) {
+          document.getElementById("You").innerHTML =
+            "你考了" + score + "分拿到了A!";
+          Youstyle.style.color = 'red'
+
+        } else if (score >= 60) {
+          document.getElementById("You").innerHTML =
+            "你考了" + score + "分拿到了B!";
+          Youstyle.style.color = 'roange'
+        } else if (score >= 40) {
+          document.getElementById("You").innerHTML =
+            "你考了" + score + "分拿到了C!";
+          Youstyle.style.color = 'Yellow'
+        } else {
+          document.getElementById("You").innerHTML =
+            "你只考了" + score + "不及格!";
+          Youstyle.style.color = 'red'
+
+        }
+      } else {
+        document.getElementById("You").innerHTML =
+          "你沒有輸入內容!!!";
+      }
+
+
+    }
+    const Youstyle = document.getElementById("You")
+  </script>
+
+</body>
+
+</html>
