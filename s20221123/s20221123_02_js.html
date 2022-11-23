@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" id="myText">
+  <button type="button" id="myBtn" onclick="getInputText();">myBtn</button>
+
+  <p id="result"></p>
+  <p id="twocheck"></p>
+
+  <script>
+    const textInput = document.getElementById('myText');
+    const myBtn = document.getElementById('myBtn');
+    const resultInput = document.getElementById('result');
+    // const twocheck = document.getElementById('twocheck');
+    function getInputText() {
+      // 在Function裡面才開始取value，不然一開始在外面直接抓是空的
+      let inputTextData = textInput.value;
+      console.log('inputTextData', inputTextData);
+      // document.getElementById('result').textContent = inputTextData;
+      checkAccount(inputTextData);
+      
+    }
+    function checkAccount(inputTextData) {
+      let ans = `讓我們歡迎 ${inputTextData} 回來我們的網站!`;
+
+      switch (inputTextData) {
+        case 'amy':
+        case 'Amy':
+          resultInput.textContent = ans;
+          break;
+        case 'bob':
+        case 'Bob':
+          resultInput.textContent = ans;
+          break;
+        case 'eva':
+        case 'Eva':
+          resultInput.textContent = ans;
+          break;
+        default:
+          console.log('Hello 尚未註冊 請快註冊');
+          resultInput.textContent = `Hello ${inputTextData} 尚未註冊 請快註冊`;
+          break;
+      }
+    }
+  </script>
+  </script>
+</body>
+
+</html>
