@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 練習 -->
+  <!-- input 1 100 -->
+  <!-- input 2 10 -->
+  <!-- input 3 + -->
+  <!-- result 100+ 10 = 110 -->
+
+  <!-- input 1 100 -->
+  <!-- input 2 10 -->
+  <!-- input 3 - -->
+  <!-- result 100 + 10 = 90 -->
+
+  <label for="Num1">請輸入數字1</label>
+  <input type="text" id="Num1" value="90" placeholder="請在這裡輸入數字1">
+  <label for="Num2">請輸入數字2</label>
+  <input type="text" id="Num2" value="10" placeholder="請在這裡輸入數字2">
+  <label for="Num2">請選擇</label>
+  <!-- <input type="text" id="middle"> -->
+  <select name="" id="middle">
+    <option value="+">加法</option>
+    <option value="-">減法</option>
+  </select>
+  <button type="button" id="myBtn" onclick="getNum();">myBtn</button>
+
+  <p id="showAns"></p>
+
+  <script>
+
+    function getNum() {
+      let Num1Value = Number(Num1.value);
+      let Num2Value = Number(Num2.value);
+      let middleValue = middle.value;
+      showresult(Num1Value, Num2Value, middleValue);
+    }
+
+    function showresult(A, B, C) {
+      switch (C) {
+        case '+':
+          showAns.textContent = (A + B).toFixed(1);
+          break;
+        case '-':
+          showAns.textContent = (A - B).toFixed(1);
+          break;
+      }
+    }
+
+
+
+    const Num1 = document.getElementById('Num1');
+    const Num2 = document.getElementById('Num2');
+    const middle = document.getElementById('middle');
+    const showAns = document.getElementById('showAns');
+
+  </script>
+
+
+
+
+</body>
+
+</html>
