@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  select{
+    width: 150px;
+  }
+  span{
+    font-size: larger;
+  }
+</style>
+<body>
+  <!-- 練習 -->
+  <!-- 輸入兩個數字 -->
+  <!-- 跳出相對應的乘法表 -->
+  <label for="Num1">請輸入數字1</label>
+  <select name="Num1" id="Num1">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+  </select>
+  <!-- <input type="text" id="Num1" placeholder="請在這裡輸入數字1(1~10之間)"> -->
+  <label for="Num2">請輸入數字2</label>
+  <!-- <input type="text" id="Num2" placeholder="請在這裡輸入數字2(1~10之間)"> -->
+  <select name="Num2" id="Num2">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+  </select>
+  <button type="button" id="myBtn" onclick="getNum();">myBtn</button>
+
+  <div id="showAns"></div>
+  <!-- <div id="ShowAns2"></div> -->
+
+  <script>
+
+
+    function getNum() {
+      let Num1Value = Number(Num1.value);
+      let Num2Value = Number(Num2.value);
+      showAns.textContent = "";
+      resultX(Num1Value, Num2Value)
+    }
+    function resultX(Num1Value, Num2Value) {
+
+      for (let i = Num1Value; i <= Num2Value; i++) {
+        for (let j = 1; j <= 9; j++) {
+          let C = (i * j).toString().padStart(2, '0');
+          let A = i.toString().padStart(2, '0');
+          let B = j.toString().padStart(2, '0');
+          showAns.innerHTML += `<span>${A} * ${B} = ${C}&nbsp;&nbsp;&nbsp;&nbsp;</span>` ;
+          // someElement.appendChild(mybr);
+        }
+        showAns.innerHTML += `<br>`
+      }
+    }
+
+
+
+    const Num1 = document.getElementById('Num1');
+    const Num2 = document.getElementById('Num2');
+    const middle = document.getElementById('middle');
+    const showAns = document.getElementById('showAns');
+    const showAns2 = document.getElementById('showAns2');
+  </script>
+</body>
+
+</html>

@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+<style>
+  #showAns {
+    font-size: larger;
+  }
+</style>
 
 <body>
   <!-- 練習 -->
@@ -29,6 +34,9 @@
   <select name="" id="middle">
     <option value="+">加法</option>
     <option value="-">減法</option>
+    <option value="*">成法</option>
+    <option value="/">除法</option>
+
   </select>
   <button type="button" id="myBtn" onclick="getNum();">myBtn</button>
 
@@ -46,10 +54,16 @@
     function showresult(A, B, C) {
       switch (C) {
         case '+':
-          showAns.textContent = (A + B).toFixed(1);
+          showAns.textContent = "答案為" + (A + B).toFixed(1);
           break;
         case '-':
-          showAns.textContent = (A - B).toFixed(1);
+          showAns.textContent = "答案為" + (A - B).toFixed(1);
+          break;
+        case '*':
+          showAns.textContent = "答案為" + (A * B).toFixed(1);
+          break;
+        case '/':
+          showAns.textContent = "答案為" + (A / B).toFixed(1);
           break;
       }
     }
