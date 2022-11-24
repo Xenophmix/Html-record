@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<link rel="stylesheet" href="./css/style.css">
+
+<body>
+  <!-- forloop -->
+  <!-- 跑操場 -->
+  <!-- index i -->
+  <!-- 從哪裡開始跑 1 ==> i = 1 -->
+  <!-- 跑幾圈 10 i <== 10 -->
+  <!-- 一次跑一圈 1 i++ -->
+
+
+  <!-- <ul class="wrap" id="mainList">
+    <li class="l-card-title">
+      <h1>九九乘法表</h1>
+      <h2>MULTIPLICATION CHART</h2>
+    </li>
+    <li class="l-card">
+      <ul class="l-card__wrap">
+        <li class="l-card__title">2</li>
+        <li>2x1=2</li>
+        <li>2x2=2</li>
+        <li>2x3=2</li>
+        <li>2x4=2</li>
+        <li>2x5=21</li>
+        <li>2x6=2</li>
+        <li>2x7=2</li>
+        <li>2x8=2</li>
+        <li>2x9=2</li>
+      </ul>
+    </li>
+  </ul> -->
+
+  <!-- <script>
+    let mainList = document.getElementById('mainList');
+    let chartNum = 8;
+    let strInner = '';
+    updateList();
+
+    function updateList() {
+      //title
+      let strOut = `<li class="l-card-title">
+      <h1>九九乘法表</h1>
+      <h2>MULTIPLICATION CHART</h2>
+    </li>`
+      for (let i = 0; i < chartNum; i++) {
+        innerList(i + 2)
+        strOut += `<li class="l-card">
+              <ul class="l-card__wrap">
+                  <li class="l-card__title">${i + 2}</li>
+                  ${strInner}
+                </ul>
+            </li>`
+        strInner = '';
+      }
+      mainList.innerHTML = strOut;
+    }
+
+    function innerList(num) {
+      for (let i = 0; i < 9; i++) {
+        let A = num.toString().padStart(2, '0');
+        let B = (i + 1).toString().padStart(2, '0');
+        let C = (num * (i + 1)).toString().padStart(2, '0');
+        strInner += `<li>${A}x${B}=${C}</li>`
+      }
+    }
+  </script> -->
+  <script>
+
+    x = 5
+
+    String(x).padStart(2, '0')
+
+    console.log('X為', String(x).padStart(2, '0'));
+    console.log(typeof x);
+
+
+    // padStart 只能給字串(String)補字
+    for (let i = 1; i <= 9; i++) {
+      for (let j = 1; j <= 9; j++) {
+        let C = (i * j).toString().padStart(2, '0');
+        let A = i.toString().padStart(2, '0');
+        let B = j.toString().padStart(2, '0');
+        document.write('<br>');
+        let ANS = `${A} * ${B} = ${C}`
+        document.write(ANS, '&nbsp;&nbsp;&nbsp;');
+
+
+        // let str = `${i.toString().padStart(2,'0')} * ${j.toString().padStart(2,'0')} = ${(i * j).toString().padStart(2,'0')}`
+
+        // console.log(typeof str);
+        // document.write(str, '&nbsp;&nbsp;&nbsp;');
+      }
+      // document.write('<br>');
+
+    }
+
+  </script>
+</body>
+
+</html>
