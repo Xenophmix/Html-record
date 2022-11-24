@@ -20,14 +20,20 @@
     </div> -->
 
   <script>
-    let sum = 0; //a4 的白紙
-    // i = 1 , i <= 10
-    // i = 0 , i < 10
+
+
+    // continue 跳掉這回合
+    // break 中止迴圈
+    let sum = 0; 
     for (let i = 1; i <= 10; i++) {
-      sum += i; // 每個人簽名
+      if (i == 4) {
+        continue;
+        // break;
+      }
+      sum += i; // 每次都加一次i到sum裡面 不清空
       document.write(`${i} ${sum} <br>`);
     }
-    //最後把簽名一次顯示出來
+    //最後把所有加起來的i 顯示出來
     document.write(`reslut sum => ${sum} <br>`);
 
   </script>
