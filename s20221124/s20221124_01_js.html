@@ -35,52 +35,55 @@
       <h2>MULTIPLICATION CHART</h2>
     </li>`
       for (let i = 2; i < chartNum; i++) {
-        innerList(i)
+        innerList(i,DecChartNum(i))
         strOut += `<li class="l-card">
               <ul class="l-card__wrap">`
-
-        if (DecChartNum(i)) //console.log(DecChartNum(i) + ".");
-          // console.log(DecChartNum(i) + ".");
-          strOut += `<li class="l-card__title" style="font-size: 64px !important;" >${i}</li>`
-        
-        else{
-
+        if ((DecChartNum(i)) == "3Strsize") {
+          console.log(DecChartNum(i) + ".");
+          strOut += `<li class="l-card__title" style="font-size: 50px !important;" >${i}</li>`
+        } else if((DecChartNum(i)) == "2Strsize"){
+          console.log(DecChartNum(i) + ".");
+          strOut += `<li class="l-card__title" style="font-size: 64px !important;">${i}</li>`
+        }else{
           console.log(DecChartNum(i) + ".");
           strOut += `<li class="l-card__title">${i}</li>`
         }
-          
         strOut += `${strInner}
                 </ul>
             </li>`
         strInner = '';
-
       }
       mainList.innerHTML = strOut;
     }
 
     function DecChartNum(num) {
-
-
       try {
         // console.log(String(num).length);
-
-        if (String(num).length >= 2)
-          return true;
+        if (String(num).length == 3)
+          return "3Strsize";
+        else if (String(num).length == 2)
+          return "2Strsize";
         else
-          return false;
+          return "Normalsize"
       }
       catch (error) {
         console.log(error)
       }
     }
 
-    function innerList(num) {
+    function innerList(num,Maybe) {
       try {
         for (let i = 0; i < 9; i++) {
           let Num1 = num.toString().padStart(2, '0');
           let Num2 = (i + 1).toString().padStart(2, '0');
           let SumAns = (num * (i + 1)).toString().padStart(2, '0');
-          strInner += `<li>${Num1}x${Num2}=${SumAns}</li>`
+          if (Maybe == "3Strsize")
+          strInner += `<li style="font-size: 18px !important;">${Num1}x${Num2}=${SumAns}</li>`
+          else if (Maybe == "2Strsize")
+          strInner += `<li style="font-size: 19px !important;">${Num1}x${Num2}=${SumAns}</li>`
+          else
+          strInner += `<li style="font-size: 21px !important;">${Num1}x${Num2}=${SumAns}</li>`
+
         }
 
       } catch (error) {
