@@ -18,13 +18,13 @@
   <!-- 一次跑一圈 1 i++ -->
 
 
-  
-    <ul class="wrap" id="mainList"></ul> 
+
+  <ul class="wrap" id="mainList"></ul>
 
 
   <script>
     let mainList = document.getElementById('mainList');
-    let chartNum = 8;
+    let chartNum = 103;
     let strInner = '';
     updateList();
 
@@ -34,25 +34,57 @@
       <h1>九九乘法表</h1>
       <h2>MULTIPLICATION CHART</h2>
     </li>`
-      for (let i = 0; i < chartNum; i++) {
-        innerList(i + 2)
+      for (let i = 2; i < chartNum; i++) {
+        innerList(i)
         strOut += `<li class="l-card">
-              <ul class="l-card__wrap">
-                  <li class="l-card__title">${i + 2}</li>
-                  ${strInner}
+              <ul class="l-card__wrap">`
+
+        if (DecChartNum(i)) //console.log(DecChartNum(i) + ".");
+          // console.log(DecChartNum(i) + ".");
+          strOut += `<li class="l-card__title" style="font-size: 64px !important;" >${i}</li>`
+        
+        else{
+
+          console.log(DecChartNum(i) + ".");
+          strOut += `<li class="l-card__title">${i}</li>`
+        }
+          
+        strOut += `${strInner}
                 </ul>
             </li>`
         strInner = '';
+
       }
       mainList.innerHTML = strOut;
     }
 
+    function DecChartNum(num) {
+
+
+      try {
+        // console.log(String(num).length);
+
+        if (String(num).length >= 2)
+          return true;
+        else
+          return false;
+      }
+      catch (error) {
+        console.log(error)
+      }
+    }
+
     function innerList(num) {
-      for (let i = 0; i < 9; i++) {
-        let A = num.toString().padStart(2, '0');
-        let B = (i + 1).toString().padStart(2, '0');
-        let C = (num * (i + 1)).toString().padStart(2, '0');
-        strInner += `<li>${A}x${B}=${C}</li>`
+      try {
+        for (let i = 0; i < 9; i++) {
+          let Num1 = num.toString().padStart(2, '0');
+          let Num2 = (i + 1).toString().padStart(2, '0');
+          let SumAns = (num * (i + 1)).toString().padStart(2, '0');
+          strInner += `<li>${Num1}x${Num2}=${SumAns}</li>`
+        }
+
+      } catch (error) {
+        console.log(error)
       }
     }
   </script>
