@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- Prompt -->
+  <!-- while練習 -->
+  <p id="demo"></p>
+
+
+  <script>
+    let text = "";
+    let number = prompt("請輸入一個數字", "100");
+    let i = 0;
+
+    // while(1 or 0) 分別代表True False
+    while (i < number) {
+      i++;  //i++要放前面 不然 i == 100 回到上面時 因為他沒有++ 所以它就是一直100 先加了才可以逃過 if (i == 100)
+      if (i == 100) {
+        continue;
+      }
+      text += "<br>" + i;
+    }
+    document.getElementById("demo").innerHTML = text;
+  </script>
+</body>
+
+</html>
