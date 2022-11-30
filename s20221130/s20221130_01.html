@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+<style>
+  #showAns {
+    font-size: 100px;
+  }
+</style>
+
+<body>
+  <!-- 練習 -->
+  <!-- input 1 100 -->
+  <!-- input 2 10 -->
+  <!-- input 3 + -->
+  <!-- result 100+ 10 = 110 -->
+
+  <!-- input 1 100 -->
+  <!-- input 2 10 -->
+  <!-- input 3 - -->
+  <!-- result 100 + 10 = 90 -->
+  <div class="container">
+    <h2>
+      簡易加減乘除
+    </h2>
+    <div class="row g-3">
+      <div class="input-group col-md">
+        <div class="form-floating">
+          <input type="text" class="form-control" id="Num1" placeholder="請輸入數字1">
+          <label for="Num1">請輸入數字1</label>
+        </div>
+      </div>
+      <div class="input-group col-md">
+        <div class="form-floating">
+          <input type="text" class="form-control" id="Num2" placeholder="請輸入數字2">
+          <label for="Num1">請輸入數字2</label>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="form-floating">
+          <!-- <input type="text" id="middle"> -->
+          <select class="form-select" name="" id="middle">
+            <option value="+">加法</option>
+            <option value="-">減法</option>
+            <option value="*">成法</option>
+            <option value="/">除法</option>
+          </select>
+          <label for="Num2">請選擇</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5 d-flex">
+
+    <button class="btn btn-primary mx-auto" type="button" id="myBtn" onclick="getNum();">開始計算</button>
+
+  </div>
+
+
+  <hr>
+  <div class="container">
+    <p id="showAns">答案為:</p>
+  </div>
+
+  <script>
+
+    function getNum() {
+      let Num1Value = Number(Num1.value);
+      let Num2Value = Number(Num2.value);
+      let middleValue = middle.value;
+      showresult(Num1Value, Num2Value, middleValue);
+    }
+
+    function showresult(A, B, C) {
+      if (A != null && A != "" && B != null && B != "") {
+
+        switch (C) {
+          case '+':
+            showAns.textContent = "答案為:" + (A + B).toFixed(1);
+            break;
+          case '-':
+            showAns.textContent = "答案為:" + (A - B).toFixed(1);
+            break;
+          case '*':
+            showAns.textContent = "答案為:" + (A * B).toFixed(1);
+            break;
+          case '/':
+            showAns.textContent = "答案為:" + (A / B).toFixed(1);
+            break;
+        }
+      } else {
+        showAns.textContent = "請輸入完整";
+      }
+
+    }
+
+
+    const cns = /.*[\u4e00-\u9fa5]+.*$/;
+    const Num1 = document.getElementById('Num1');
+    const Num2 = document.getElementById('Num2');
+    const middle = document.getElementById('middle');
+    const showAns = document.getElementById('showAns');
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="row g-3">
+    <div class="input-group col-md">
+      <div class="form-floating">
+        <input type="text" class="form-control" id="NUMBER1" placeholder="請輸入數字1">
+        <label for="Num1">請輸入數字1</label>
+      </div>
+    </div>
+    <div class="input-group col-md">
+      <div class="form-floating">
+        <input type="text" class="form-control" id="NUMBER2" placeholder="請輸入數字2">
+        <label for="Num1">請輸入數字2</label>
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-primary mx-auto" onclick="make();">按我開始計算</button>
+    </div>
+
+
+    <script>
+      function Peri(NumA, NumB) {
+        let ANS = (NumA + NumB) * 2;
+        console.log('加總為:', ANS);
+      }
+
+      function Area(NumA, NumB) {
+        let Area = NumA * NumB;
+        resultANS(Area)
+        console.log('乘積為:', Area);
+        if (resultANS(Area) == "BIG")
+        console.log('面積大於500');
+        else
+        console.log('面積小於500');
+      }
+
+      function resultANS(SIZE){
+        if (SIZE > 500)
+        return "BIG";
+        else
+        return "small";
+      }
+
+      function make() {
+        let Num1Value = Number(Num1.value);
+        let Num2Value = Number(Num2.value);
+        Peri(Num1Value, Num2Value)
+        Area(Num1Value, Num2Value)
+      }
+
+      const Num1 = document.getElementById('NUMBER1');
+      const Num2 = document.getElementById('NUMBER2');
+    </script>
+</body>
+
+</html>
