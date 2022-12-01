@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //練習 
+    //sum
+    //myArr value 加總
+    //for
+
+
+    let NumberList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+    let NumberListSum1 = 0
+    let NumberListSum2 = 0
+    let evenSum = 0
+    let oddSum = 0
+
+    // i是從0開始 注意看
+    function SumFor(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        if (NumberList[i] % 2 == 0)
+          evenSum += NumberList[i];
+        else
+          oddSum += NumberList[i];
+        NumberListSum1 += NumberList[i];
+        console.log(NumberListSum1);
+      }
+      console.log("偶數", evenSum);
+      console.log("基數", oddSum);
+    }
+    // 呼叫
+    SumFor(NumberList);
+
+
+    function SumforEach(arr) {
+      arr.forEach(function (NUMBER) {
+        NumberListSum2 += NUMBER;
+      });
+      return "Foreach加總=" + NumberListSum2;
+    }
+    // 呼叫
+    console.log(SumforEach(NumberList));
+
+
+
+
+    function Sumreduce(arr) {
+      return "reduce加總=" + arr.reduce((a, b) => a + b);
+    }
+    // 呼叫
+    console.log(Sumreduce(NumberList));
+
+
+  </script>
+</body>
+
+</html>
