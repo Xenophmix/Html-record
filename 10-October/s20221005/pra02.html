@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習二</title>
+    <style>
+        .block{
+            padding: 12px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 8px;
+            background-color: antiquewhite;
+            display: flex;
+        }
+        .block1{
+            justify-content: space-between;
+        }
+        .dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            background: black;
+        }
+        .position{
+            justify-content: center;
+            align-items: center;
+        }
+        .position1{
+            align-self: center;
+        }
+        .position2{
+            align-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>練習二</h2>
+    <h3>使用CSS繪製骰子一點</h3>
+    <div class="block position"><div class="dot"></div></div>
+    <div class="block block1 position1">
+        <div class="dot"></div>
+        <div class="dot position1"></div>
+        <div class="dot position2"></div>
+</div>
+
+</body>
+
+</html>

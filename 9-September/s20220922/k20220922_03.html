@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+    <style>
+        h3 {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>form</h3>
+    <!-- form tab -->
+    <!-- input:text tab -->
+    <!-- input:number tab -->
+    <!-- label tab -->
+    <form action="xxx.php">
+<fieldset>
+    <legend>My Form</legend>
+    <!-- text number radio checkbox select textarea date password submit reset -->
+    
+    <!-- input text 文字方塊 -->
+    <!-- name => 送到後端 -->
+    <!-- id 當前頁面 方便我們操作 -->
+    
+    <p>
+        <label for="name">姓名</label>
+        <input type="text" name="name" id="name" required>
+    </p>
+    <!-- input number 數字方塊 -->
+    <p>
+        <label for="money">薪水</label>
+        <input type="number" name="money" id="money" value="">
+    </p>
+    <p>
+        <label for="password">密碼</label>
+        <input type="password" name="password" id="password" required>
+    </p>
+    <p>
+        <label for="date">生日</label>
+        <input type="date" name="date" id="date" value="">
+    </p>
+    <p>
+        <!-- radio 單一選擇 / label 放後面 -->
+        <label for="radio">最愛的語言</label>
+        <input type="radio" name="radio" id="html" value="">
+        <label for="radio">html</label>
+        <input type="radio" name="radio" id="css" value="">
+        <label for="radio">css</label>
+        <input type="radio" name="radio" id="js" value="">
+        <label for="radio">js</label>
+        <input type="radio" name="radio" id="php" value="">
+        <label for="radio">php</label>
+        <input type="radio" name="radio" id="sql" value="">
+        <label for="radio">sql</label>
+    </p>
+    <!-- 老師教的 8-15頁 -->
+    <!-- 練習一 -->
+    <!-- checkbox -->
+    <!-- 我的興趣 可以多選五個選項 -->
+    <p>
+            <input type="checkbox" name="hobby[]" id="籃球">
+            <label for="籃球">籃球</label>
+            <input type="checkbox" name="hobby[]" id="足球">
+            <label for="足球">足球</label>
+            <input type="checkbox" name="hobby[]" id="羽球">
+            <label for="羽球">羽球</label>
+            <input type="checkbox" name="hobby[]" id="桌球">
+            <label for="桌球">桌球</label>
+            <input type="checkbox" name="hobby[]" id="躲避球">
+            <label for="躲避球">躲避球</label>
+        </p>
+        <!-- 課本的版本 8-15頁 -->
+        <p>
+            <!-- checked 將它預設為確認 -->
+            <input type="checkbox" name="ball[]" value="籃球" checked>籃球
+            <input type="checkbox" name="ball[]" value="足球">足球
+            <input type="checkbox" name="ball[]" value="羽球">羽球
+            <input type="checkbox" name="ball[]" value="桌球">桌球
+            <input type="checkbox" name="ball[]" value="躲避球">躲避球
+        </p>
+        <p>
+            <label for="area">未來工作地方</label>
+            <select name="area" id="area">
+                <option value="1">北</option>
+                <option value="2">中</option>
+                <option value="3">南</option>
+            </select>
+        </p>
+        <hr>
+        <p>
+            <input type="submit" value="送出">
+            <input type="reset" value="重新整理">
+        </p>
+    </fieldset>
+    </form>
+</body>
+
+</html>

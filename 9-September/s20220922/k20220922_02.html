@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Html淺藍課本6-2 -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table by my own</title>
+    <!-- body id 獨一無物 /  #id -->
+    <!-- body class 群組  / .class-->
+    <style>
+        body {
+            background-color: pink;
+        }
+
+        td {
+            background-color: aquamarine;
+            color: blue;
+        }
+        #ball {color: blueviolet;}
+    </style>
+</head>
+
+<body>
+    <h1>Table Practice</h1>
+    <!-- table -->
+    <!-- table tr td 都需要 -->
+    <!-- 練習一 -->
+    <!-- 九空格練習 -->
+    <!-- 練習二
+     5 =>紅色 -->
+    <!-- 練習三
+     5以外  =>藍色  -->
+
+    <!-- table tr th(table head)  -->
+    <!-- table tr td  -->
+    <table border="1">
+        <!-- row -->
+        <tr>
+            <th width="100px">左</th>
+            <th width="100px">中</th>
+            <th width="100px">右</th>
+        </tr>
+        <tr>
+            <td id="ball" width="100px" rowspan="2">1</td>
+            <td width="100px">2</td>
+            <td width="100px" rowspan="3">3</td>
+        </tr>
+        <tr>
+            <!-- <td width="100px">4</td> -->
+            <td width="100px" style="color:red">5</td>
+            <!-- <td width="100px">6</td> -->
+        </tr>
+        <tr>
+            <td id="ball" width="100px" rowspan>7</td>
+            <td width="100px">8</td>
+            <!-- <td width="100px">9</td> -->
+        </tr>
+    </table>
+    <br>
+    <br>
+    <hr>
+    <!-- 練習四
+        1 2 3 合併
+        7 8 合併 
+     -->
+    <table border="1">
+        <!-- row -->
+        <tr>
+            <th width="100px">左</th>
+            <th width="100px">中</th>
+            <th width="100px">右</th>
+        </tr>
+        <tr>
+            <td width="100px" style="background-color:lightblue" colspan="3">1</td>
+            <!-- <td width="100px">2</td> -->
+            <!-- <td width="100px">3</td> -->
+        </tr>
+        <tr>
+            <td width="100px">4</td>
+            <td width="100px" style="color:red">5</td>
+            <td width="100px">6</td>
+        </tr>
+        <tr>
+            <td width="100px" style="background-color:orange" colspan="2">7</td>
+            <!-- <td width="100px">8</td> -->
+            <td width="100px">9</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <hr>
+    <!-- 練習五 
+        3 6 9 合併 保留3
+      =>3 6 9 合併 保留9
+    -->
+    <table border="1">
+        <!-- row -->
+        <tr>
+            <th width="100px">左</th>
+            <th width="100px">中</th>
+            <th width="100px">右</th>
+        </tr>
+        <tr>
+            <td width="100px">1</td>
+            <td width="100px">2</td>
+            <td width="100px" rowspan="3" >9</td>
+        </tr>
+        <tr>
+            <td width="100px">4</td>
+            <td width="100px" style="color:red">5</td>
+            <!-- <td width="100px">6</td> -->
+        </tr>
+        <tr>
+            <td width="100px">7</td>
+            <td width="100px">8</td>
+            <!-- <td width="100px" colspan="3" >9</td> -->
+        </tr>
+    </table>
+</body>
+
+</html>

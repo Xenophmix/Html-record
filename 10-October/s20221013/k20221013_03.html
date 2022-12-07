@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pinkinput:focus {
+            background-color: pink;
+
+        }
+
+        a:hover {
+            color: red
+        }
+
+        input[type=text]:focus {
+            width: 90%;
+            background-color: pink;
+        }
+
+        input[type=text]:hover {
+            background-color: lightgreen;
+        }
+
+        input {
+            width: 80%;
+            height:94px;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+        }
+
+        td {
+            height: 20px;
+        }
+
+        tr:nth-of-type(even) {
+            background-color: lightblue;
+        }
+
+        tr:hover {
+            background-color: pink;
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .item-left{
+            flex-basis: 30%;
+            height: 100px;
+            text-align: center;
+            margin-bottom: 30px ;
+            line-height: 90px;
+        }
+        .item-left:hover{
+            background-color: pink;
+        }
+        .item-left:nth-of-type(odd){
+            background-color: lightblue;
+        }
+        .item-right{
+            flex-basis: 70%;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- name chinese english math -->
+    <div class="container">
+        <div class="item-left">Name</div>
+        <div class="item-right"><input type="text" name="" id=""></div>
+        <div class="item-left">chinese</div>
+        <div class="item-right"><input type="text" name="" id=""></div>
+        <div class="item-left">english</div>
+        <div class="item-right"><input type="text" name="" id=""></div>
+        <div class="item-left">math</div>
+        <div class="item-right"><input type="text" name="" id=""></div>
+    </div>
+</body>
+
+</html>

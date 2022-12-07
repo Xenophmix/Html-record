@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flex骰子</title>
+    <style type="text/css">
+        .box {
+            padding: 12px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+        }
+
+        span {
+            width: 30px;
+            height: 30px;
+            background-color: rgb(158, 12, 12);
+            border-radius: 15px;
+        }
+
+        .box1 {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box2 {
+            justify-content: space-between;
+        }
+
+        .box2 .item2 {
+            align-self: flex-end;
+        }
+
+        .box3 {
+            justify-content: space-between;
+        }
+
+        .box3 .item2 {
+            align-self: center;
+        }
+
+        .box3 .item3 {
+            align-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1">
+        <span class="item1"></span>
+    </div>
+    <div class="box box2">
+        <span></span>
+        <span class="item2"></span>
+    </div>
+    <div class="box box3">
+        <span class="item1"></span>
+        <span class="item2"></span>
+        <span class="item3"></span>
+    </div>
+</body>
+
+</html>

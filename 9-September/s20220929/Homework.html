@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商業報表</title>
+    <style>
+        /* https://www.oxxostudio.tw/articles/201809/css-font-size.html */
+        /* 
+            em rem font-size
+            px 固定
+            em 會越來越大
+            rem 固定比率
+            large 固定
+        
+        */
+
+        body {
+            background-color: #093261;
+        }
+
+        .font1 {
+            font-size: 16px;
+        }
+
+        .font2 {
+            font-size: 1em;
+        }
+
+        .font3 {
+            font-size: x-large;
+        }
+
+        .font4 {
+            font-size: 1.5rem;
+        }
+
+
+        .cent {
+            text-align: center;
+            /* margin:0 auto; */
+        }
+
+        a {
+            /* 不要底線 */
+            text-decoration: none;
+            background-color: lightblue;
+            padding: 10px;
+            border: 2PX solid #ccc;
+            border-radius: 15px;
+        }
+
+        a:hover {
+            /* color: red; */
+            background-color: rgb(56, 205, 138);
+        }
+
+        /* unvisited link 
+            還沒點進過
+        */
+        a:link {
+            color: #ee29d4;
+        }
+
+        /* visited link
+           點進去過的
+         */
+        a:visited {
+            color: blue;
+        }
+
+        table {
+            margin: 0 auto;
+            width: 80%;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        table,
+        tr,
+        td,
+        th {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #B9F6FF;
+            border: 1px solid black;
+            background-color: #2162AD;
+        }
+
+        td:hover {
+            color: #AD6F00;
+        }
+
+        h3 {
+            color: #95AD07
+        }
+    </style>
+</head>
+
+<body>
+    <h3 class="font4" style="font-family: monospace;">飲料店的商業報表
+        <img src="./Img/nyancat-donuts.gif" alt="" width="5%" height="5%">
+    </h3>
+    <table class="font4">
+        <tr>
+            <th>id</th>
+            <th>品名</th>
+            <th>進貨價格</th>
+            <th>進貨日期</th>
+            <th>庫存</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>奶茶</td>
+            <td>100</td>
+            <td>2022-10-05</td>
+            <td>60</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>綠茶</td>
+            <td>200</td>
+            <td>2022-10-05</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>紅茶</td>
+            <td>300</td>
+            <td>2022-10-05</td>
+            <td>40</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>梅子綠茶</td>
+            <td>400</td>
+            <td>2022-10-05</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>青茶</td>
+            <td>500</td>
+            <td>2022-10-05</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>烏龍茶</td>
+            <td>600</td>
+            <td>2022-10-05</td>
+            <td>10</td>
+        </tr>
+    </table>
+
+    <!-- a{$}*7 -->
+
+    <div class="cent">
+        <a href="#" style="font-size: 0.5rem;"">&lt;</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#" style="font-size: 1.5rem;">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#" style="font-size: 0.5rem;" >&gt;</a>
+    </div>
+
+</body>
+
+</html>

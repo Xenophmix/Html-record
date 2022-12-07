@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>block</title>
+    <style>
+        div{
+            margin-top: 10px;
+        }
+        article,
+        nav {
+            width: 150px;
+            background-color: bisque;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            box-sizing: border-box;
+            border: 2px solid rgb(6, 253, 26);
+            text-align: center;
+        }
+
+        .rectangle {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background: black;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 50px;
+            background: black;
+        }
+        .circle-sun{
+            width: 100px;
+            height: 100px;
+            border: 10px solid yellow;
+            border-width: 30px;
+            border-style: solid;
+            border-radius: 50%;
+            background: rgb(185, 214, 55);
+        }
+        .circle-arc-left{
+            width: 100px;
+            height: 100px;
+            border-width: 30px 30px 0 30px;
+            border-style: solid;
+            border-color: yellow  transparent transparent transparent;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .circle-arc-right{
+            width: 100px;
+            height: 100px;
+            border-width: 0px 30px 30px 30px;
+            border-style: solid;
+            border-color: transparent transparent yellow transparent;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .circle-arc{
+            width: 100px;
+            height: 100px;
+            /* border: 10px solid yellow; */
+            border-width: 30px;
+            border-style: solid;
+            border-color: yellow  transparent transparent transparent;
+            border-radius: 50%;
+            display: inline-block;
+            /* background: rgb(185, 214, 55); */
+        }
+        .circle-arc{
+            width: 100px;
+            height: 100px;
+            /* border: 10px solid yellow; */
+            border-width: 30px;
+            border-style: solid;
+            border-color: yellow  transparent transparent transparent;
+            border-radius: 50%;
+            /* background: rgb(185, 214, 55); */
+        }
+        .triangle-top{
+            width: 0;
+            border-width: 20px;
+            border-style:solid;
+            /* background:black; */
+            border-color:blue transparent transparent transparent;
+        }
+        .triangle-left{
+            width: 0;
+            border-width: 20px;
+            border-style:solid;
+            /* background:black; */
+            border-color:transparent transparent transparent blue;
+        }
+        .triangle-right{
+            width: 0;
+            border-width: 20px;
+            border-style:solid;
+            /* background:black; */
+            border-color: transparent blue transparent transparent;
+        }
+        .triangle-bottom{
+            width: 0;
+            border-width: 20px;
+            border-style:solid;
+            /* background:black; */
+            border-color: transparent transparent blue transparent;
+        }
+        .triangle{
+            width: 0;
+            border-width: 0px 20px 20px 20px;
+            border-style:solid;
+            /* background:black; */
+            border-color: transparent transparent blue transparent;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>盒子box-model</h1>
+    <div class="rectangle"></div>
+    <div class="circle"></div>
+    <div class="circle-sun"></div>
+    <div class="circle-arc-right"></div>
+    <div class="circle-arc-left"></div>
+    <div class="triangle"></div>
+    <div style="height: 30px;"></div>
+    <div class="triangle-top"></div>
+    <div class="triangle-left"></div>
+    <div class="triangle-right"></div>
+    <div class="triangle-bottom"></div>
+
+
+    <div>divdiv</div>
+    <div>divdiv</div>
+    <div>divdiv</div>
+    <div>divdiv</div>
+    <div>divdiv</div>
+    <article>article</article>
+    <article>article</article>
+    <article>article</article>
+    <article>article</article>
+    <article>article</article>
+    <nav>navnav</nav>
+    <nav>navnav</nav>
+    <nav>navnav</nav>
+    <nav>navnav</nav>
+    <nav>navnav</nav>
+
+</body>
+
+</html>
