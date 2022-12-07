@@ -1,21 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
+  <p id="Showresult"></p>
+  <button id="ShowresultBtn">Click Me 1!</button>
+  <button id="ShowresultBtn2">Click Me!</button>
+
   <script>
-    let employee = [3,4,5,6,7];
-
-    let costmoney = [];
-
-
+    // map
+    let employee = [3, 4, 5, 6, 7];
     
+    let Newemployee = employee.map(function (value, key) {
+      if (value == 5) {
+        return value * 4;
+      }
+      return value * 2
+      
+    });
+
+    function Going() {
+      document.getElementById("Showresult").innerHTML = Newemployee;
+    }
+    function Empty() {
+      document.getElementById("Showresult").innerHTML = "";
+    }
+    
+    // reduce 逐步處理檢查
+    // total 原始的數值 value = CurrentValue 接下來目前要處理的數值
+    console.log('Newemployee',Newemployee);
+    let sum = Newemployee.reduce((total, value) => {
+      console.log('total', total);
+      console.log('value', value);
+      return total + value;
+    });
+
+    // filter 篩選 
+    let NewemployeeFilter = employee.filter(value => {
+      return value < 5 ;
+
+    })
+
+    console.log('employee',employee);
+    console.log('NewemployeeFilter',NewemployeeFilter);
 
 
+    // forEach
+
+    let bonus = [];
+    employee.forEach((value,key) => {
+      let newValue = value * 2 ;
+      bonus.push(newValue);
+      // bonus.push(value * 2);
+    })
+
+
+    let sumforEach = [];
+    let newsum = 0;
+    employee.forEach((value,key) => {
+      newsum += value;
+      console.log('newsum',newsum);
+    })
+    
+    ShowresultBtn.addEventListener("click", Going);
+    ShowresultBtn2.addEventListener("click", Empty);
   </script>
 </body>
+
 </html>
