@@ -10,26 +10,38 @@
 
 <body>
   <script>
+    // 建立一個 studentObj
+    // property
+    // 'name' : 'amy',
+    // 'age' : '18',
+    // 'chinese' : '70',
+    // 'english' : '80',
+    // 'math' : '90',
+
+    // 建立 method
+    // sumFun   avgFun
+
     let obj = {
       'name': 'amy',
       'age': 18,
       'chinese': 70,
       'english': 80,
       'math': 90,
-      'sumFun': function () {
+      'sumFun': function () {    //如果要使用this，就只能使用傳統的function ()
+                                 //在物件內 this 可以指向上一層的 Obj 
         let sum = this.chinese + this.english + this.math;
         return sum;
       },
-      'avgFun': () => {
+      'avgFun': () => {  //箭頭函式必須講清是obj裡面的誰 不能用this 推測是在外面呼叫時 是針對外面的this
+                         //所以抓到外面的window
         let avg = obj.sumFun() / 3;
-        console.log('平均',avg);
-        console.log('加總',obj.sumFun());
+        console.log('平均', avg);
+        console.log('加總', obj.sumFun());
       }
 
     }
     // console.log('平均', obj.avgFun);
     // console.log('加總', obj.sumFun);
-    obj.sumFun()
     obj.avgFun()
   </script>
 </body>
