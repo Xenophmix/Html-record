@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red {
+      color: red;
+    }
+
+    .blue {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="myP"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+    integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(function () {
+      // $('#myP').text('hello Jquery');
+      // const myPJs = document.getElementById('myP');
+      const myPJq = $('#myP');
+      // console.log('myPJs', myPJs);
+      console.log('myPJq', myPJq);
+
+      myPJq.text('Hello!Jquery');
+      myPJq.attr('class', 'blue');
+    });
+
+
+  </script>
+
+
+
+
+
+</body>
+
+</html>

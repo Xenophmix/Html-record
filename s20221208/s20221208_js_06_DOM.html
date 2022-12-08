@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <h1 id="myH1">he text</h1>
+    <a href="#">link text</a>
+    <button type="button" onclick="appendFun();">myBtn appendChild dom</button>
+    <div id="myDiv">
+        <!-- green p tag 丟進來 -->
+    </div>
+
+
+    <script>
+        const myH1 = document.getElementById('myH1');
+        console.log(myH1);
+        // myH1.innerText = '<strong>imperative</strong>';
+        myH1.innerHTML = '<strong>imperative</strong>';
+
+
+
+        // 丟到我要的位置
+        const myDiv = document.getElementById('myDiv');
+
+        function appendFun() {
+            // 建立create p
+            // createElement('p')
+            const greenP = document.createElement('p');
+            greenP.textContent = 'hello :))';
+            greenP.style.color = 'green';
+            console.log('greenP', greenP);
+
+            console.log('appendFun ok');
+            myDiv.append(greenP);
+
+        }
+
+        const parent = document.createElement('div');
+        const child = document.createElement('p');
+        const childTwo = document.createElement('p');
+        parent.append(child, childTwo, 'Hello world'); // 工作正常
+        parent.appendChild(child, childTwo, 'Hello world');
+        myDiv.append(parent);
+        // 工作正常，但新增第一個元素，而忽略其餘元素
+        
+
+
+    </script>
+
+</body>
+
+</html>
