@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box1 {
+    background-color: lightpink;
+    width: 800px;
+    height: 50px;
+  }
+
+  .box2 {
+    background-color: lightblue;
+    width: 800px;
+    height: 300px;
+
+  }
+
+  .box3 {
+    display: flex;
+  }
+</style>
+
+<body>
+  <div class="box1">
+
+  </div>
+  <div class="box2">
+      <button type="button" id="hideToggleBtn">hideToggleBtn</button>
+      <button type="button" id="fadeToggleBtn">fadeToggleBtn</button>
+      <button type="button" id="slideToggleBtn">slideToggleBtn</button>
+  </div>
+
+  <select name="mySelect" id="mySelect">
+    <option value="hide">hideToggleBtn</option>
+    <option value="fade">fadeToggleBtn</option>
+    <option value="slide">slideToggleBtn</option>
+  </select>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+    integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+
+
+
+
+    $(function () {
+      // $('.box1').click(function () {
+      //   // $('.box2').slideUp();
+      //   $('.box2').slideToggle();
+      // });
+      // jquery methon chain
+      $('#hideToggleBtn').click(function () {
+        $('.box2').toggle();
+      });
+      $('#fadeToggleBtn').click(function () {
+        $('.box2').fadeToggle();
+      });
+      $('#slideToggleBtn').click(function () {
+        $('.box2').slideToggle();
+      });
+      $('.box1').click(function () {
+        let GetVal = $('select').val();
+        console.log(GetVal);
+        if ($("select").val() == 'hide') {
+          $('.box2').toggle();
+        }else if($("select").val() == 'fade'){
+          $('.box2').fadeToggle(2000);
+        }else if($("select").val() == 'slide'){
+          $('.box2').slideToggle(2000);
+        }
+      });
+    });
+    $("select").val("val2");
+  </script>
+</body>
+
+</html>

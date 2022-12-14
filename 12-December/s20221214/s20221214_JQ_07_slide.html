@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box1 {
+    background-color: lightpink;
+    width: 800px;
+    height: 300px;
+  }
+
+  .box2 {
+    background-color: lightblue;
+    width: 800px;
+    height: 300px;
+    display: none;
+    overflow: scroll;
+  }
+</style>
+
+<body>
+  <div class="box1">
+
+  </div>
+  <div class="box2">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ducimus consequuntur blanditiis distinctio cupiditate? Voluptatum, magni hic? Eum impedit voluptatem facilis, quidem delectus animi. Reiciendis voluptatibus doloremque delectus qui neque.
+Rerum repudiandae officiis dolorum! Ea, laborum? Earum unde, officiis consectetur aliquam, corporis placeat, sit libero doloremque vero quasi ex. Aliquam fuga repudiandae veniam doloremque maiores non explicabo. Laboriosam, eligendi modi?
+Nulla maiores error fugiat consequuntur! Pariatur unde laborum in illo laudantium maxime accusamus aut dicta. Voluptate enim, eveniet porro quas, alias incidunt reprehenderit rem consequuntur beatae exercitationem quia quod illo!
+Ad amet delectus placeat perspiciatis perferendis. Esse, quae minus placeat temporibus molestias obcaecati commodi distinctio in dolorum aspernatur asperiores dignissimos repellendus libero blanditiis. Culpa laboriosam iste excepturi eveniet accusantium voluptates.
+Impedit voluptas quis quasi, aliquam pariatur voluptatem cumque, id debitis expedita tenetur, nihil neque laboriosam necessitatibus vero sit! Labore dolore expedita architecto, rerum commodi consequuntur tempore. Quae corporis tempore sed!
+Nisi obcaecati accusamus aperiam quibusdam quae nihil temporibus fugiat suscipit omnis vitae. Expedita, eum! Earum rerum consequatur, voluptatem ad aliquid vitae nesciunt fugiat unde accusantium harum suscipit quam saepe reiciendis.
+Accusamus, expedita eaque. Odit voluptates obcaecati ea? Vitae hic, fuga sapiente tempore placeat illum velit quibusdam dolor commodi sunt possimus modi? Magni eligendi provident nobis repellendus quibusdam, perferendis ipsam pariatur.
+Laudantium rerum optio quae iure est vel, deleniti odit ducimus sint, amet nulla excepturi nobis nesciunt dignissimos dolorem, accusantium eos harum enim earum provident odio incidunt ad pariatur. Culpa, accusamus?
+Neque, non eum. Nihil, dolorum voluptatibus eaque veritatis explicabo laudantium recusandae ad mollitia labore, atque et nisi! Labore quaerat iusto illo laudantium repudiandae, cumque earum architecto, pariatur laborum quos sequi!
+Velit, aut sint. Ad mollitia, perferendis placeat ipsam odio dolore error laudantium veniam alias quisquam, id sapiente quam nulla ab odit incidunt amet repellendus rem vel, possimus sint ea dolorum!
+  </div>
+  <button type="button" id="slideUpBtn">slideUpBtn</button>
+  <button type="button" id="slideDownBtn">slideDownBtn</button>
+  <button type="button" id="slideToggleBtn">slideToggleBtn</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+    integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+
+
+
+   
+$(function () {
+            $('.box1').click(function () {
+                // $('.box2').slideUp();
+                $('.box2').slideToggle();
+            });
+            // jquery methon chain
+            $('#slideUpBtn').click(function () {
+                $('.box2').css("color", "red").slideUp(2000).slideDown(2000).slideUp(2000).slideDown(2000);
+            })
+            $('#slideDownBtn').click(function () {
+                $('.box2').slideDown(3000,function(){
+                    alert('收費10000');
+                });
+            })
+            $('#slideToggleBtn').click(function () {
+                $('.box2').slideToggle();
+            })
+        });
+  </script>
+</body>
+
+</html>
