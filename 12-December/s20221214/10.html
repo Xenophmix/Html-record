@@ -12,6 +12,10 @@
     background-color: lightpink;
     width: 800px;
     height: 50px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 50px;
   }
 
   .box2 {
@@ -20,27 +24,25 @@
     height: 300px;
 
   }
-
-  .box3 {
-    display: flex;
-  }
 </style>
 
 <body>
-  <div class="box1">
 
-  </div>
-  <div class="box2">
-      <button type="button" id="hideToggleBtn">hideToggleBtn</button>
-      <button type="button" id="fadeToggleBtn">fadeToggleBtn</button>
-      <button type="button" id="slideToggleBtn">slideToggleBtn</button>
-  </div>
-
-  <select name="mySelect" id="mySelect">
+  <button type="button" id="hideToggleBtn">hideToggleBtn</button>
+  <button type="button" id="fadeToggleBtn">fadeToggleBtn</button>
+  <button type="button" id="slideToggleBtn">slideToggleBtn</button>
+  <hr>
+  <select name="mySelect" id="mySelect" style="width:500px">
     <option value="hide">hideToggleBtn</option>
     <option value="fade">fadeToggleBtn</option>
     <option value="slide">slideToggleBtn</option>
   </select>
+  <div class="box1">
+    Select One Then Click Me To Do Something!
+  </div>
+  <div class="box2">
+  </div>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
     integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
@@ -52,33 +54,32 @@
 
 
     $(function () {
-      // $('.box1').click(function () {
-      //   // $('.box2').slideUp();
-      //   $('.box2').slideToggle();
-      // });
-      // jquery methon chain
+      // 點擊 id="hideToggleBtn" 的物件的時候 影響 class="box2"
       $('#hideToggleBtn').click(function () {
         $('.box2').toggle();
       });
+      // 點擊 id="fadeToggleBtn" 的物件的時候 影響 class="box2"
       $('#fadeToggleBtn').click(function () {
         $('.box2').fadeToggle();
       });
+      // 點擊 id="slideToggleBtn" 的物件的時候 影響 class="box2"
       $('#slideToggleBtn').click(function () {
         $('.box2').slideToggle();
       });
       $('.box1').click(function () {
+        // GetVal 會等於selected option 的 value
         let GetVal = $('select').val();
         console.log(GetVal);
-        if ($("select").val() == 'hide') {
+        // 可以把GetVal 塞進下面 把$("select").val()取代掉
+        if ($("select").val() == 'hide')
           $('.box2').toggle();
-        }else if($("select").val() == 'fade'){
-          $('.box2').fadeToggle(2000);
-        }else if($("select").val() == 'slide'){
-          $('.box2').slideToggle(2000);
-        }
+        else if ($("select").val() == 'fade')
+        // fadeToggle(Here) Here可以塞毫秒數 開始執行至完成的時間
+          $('.box2').fadeToggle(1000);
+        else if ($("select").val() == 'slide')
+          $('.box2').slideToggle(1000);
       });
     });
-    $("select").val("val2");
   </script>
 </body>
 
