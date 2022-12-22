@@ -116,15 +116,15 @@
 
 
       function updateTotal(priceInput, countInput, totalInput) {
-        // const price = priceInput;
-        // const count = countInput;
-        // const total = price * count;
-        // totalInput.val(total);
-
-        const price = priceInput.val();
-        const count = countInput.val();
+        const price = priceInput;
+        const count = countInput;
         const total = price * count;
         totalInput.val(total);
+
+        // const price = priceInput.val();
+        // const count = countInput.val();
+        // const total = price * count;
+        // totalInput.val(total);
       }
 
       function sum() {
@@ -153,13 +153,17 @@
 
 
       Mycount.change(function () {
-        // itemPrice = $(this).parent().prev().find('input').val();
-        // itemCount = $(this).val();
-        // itemTotal = $(this).parent().next().find('input');
-        // updateTotal(itemPrice, itemCount, itemTotal);
-        updateTotal(item1Price, item1Count, item1Total);
-        updateTotal(item2Price, item2Count, item2Total);
-        updateTotal(item3Price, item3Count, item3Total);
+        itemPrice = $(this).parent().prev().children().val();
+        itemCount = $(this).val();
+        itemTotal = $(this).parent().next().children();
+        console.log(itemPrice);
+        console.log(itemCount);
+        console.log(itemTotal);
+        updateTotal(itemPrice, itemCount, itemTotal);
+        
+        // updateTotal(item1Price, item1Count, item1Total);
+        // updateTotal(item2Price, item2Count, item2Total);
+        // updateTotal(item3Price, item3Count, item3Total);
 
 
       })
