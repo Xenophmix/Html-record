@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataTable</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+</head>
+
+<body>
+  <table id="example" class="display" style="width:100%">
+    <thead>
+      <tr>
+        <th>no.</th>
+        <th>縣市</th>
+        <th>時間1</th>
+        <th>時間2</th>
+        <th>時間3</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>no.</th>
+        <th>縣市</th>
+        <th>時間1</th>
+        <th>時間2</th>
+        <th>時間3</th>
+      </tr>
+    </tfoot>
+  </table>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+    integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+  <script>
+    $(function () {
+      const Body = $('tbody')
+
+      $.ajax({
+        url: "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-1AB1EDF0-41C2-4CC6-9185-F8F953284BC7",
+        type: "GET",
+        dataType: 'json',
+        success: function (res) {
+          console.log('res.records.location', res.records.location)
+          TextContent = ''
+          let data = res.records.location
+
+          // 抓時間
+          let OLDdataTime1 = data[0].weatherElement[2].time[0].startTime
+          let OLDdataTime2 = data[0].weatherElement[2].time[1].startTime
+          let OLDdataTime3 = data[0].weatherElement[2].time[2].startTime
+          let dataTime1 = new Date(data[0].weatherElement[2].time[0].startTime)
+          let dataTime2 = new Date(data[0].weatherElement[2].time[1].startTime)
+          let dataTime3 = new Date(data[0].weatherElement[2].time[2].startTime)
+          console.log('OLDdataTime1', OLDdataTime1)
+          console.log('OLDdataTime2', OLDdataTime2)
+          console.log('OLDdataTime3', OLDdataTime3)
+          console.log(dataTime1)
+          console.log(dataTime2)
+          console.log(dataTime3)
+          let TimeText0 = `${dataTime1.getFullYear()} / ${dataTime1.getMonth() + 1} / ${dataTime1.getDate()} / ${dataTime1.getHours()}`
+          let TimeText1 = `${dataTime2.getFullYear()} / ${dataTime2.getMonth() + 1} / ${dataTime2.getDate()} / ${dataTime2.getHours()}`
+          let TimeText2 = `${dataTime3.getFullYear()} / ${dataTime3.getMonth() + 1} / ${dataTime3.getDate()} / ${dataTime3.getHours()}`
+          console.log(TimeText0)
+          console.log(TimeText1)
+          console.log(TimeText2)
+
+          $('thead>tr>th').eq(2).text(TimeText0)
+          $('thead>tr>th').eq(3).text(TimeText1)
+          $('thead>tr>th').eq(4).text(TimeText2)
+          $('tfoot>tr>th').eq(2).text(TimeText0)
+          $('tfoot>tr>th').eq(3).text(TimeText1)
+          $('tfoot>tr>th').eq(4).text(TimeText2)
+
+          $.each(data, function (index, value) {
+            // console.log(data)
+            // console.log(index)
+            console.log(value)
+            // console.log(value.locationName)
+            TextContent +=
+              `
+            <tr>
+              <td>${index + 1}</td>
+              <td>${value.locationName}</td>
+              <td>
+                ${value.weatherElement[0].time[0].parameter.parameterName}
+                ${value.weatherElement[2].time[0].parameter.parameterName}
+                ${value.weatherElement[4].time[0].parameter.parameterName}
+                &deg;C
+              </td>
+              <td>${value.weatherElement[0].time[1].parameter.parameterName}</td>
+              <td>${value.weatherElement[0].time[2].parameter.parameterName}</td>
+            </tr>`
+
+          });
+          Body.append(TextContent)
+          $('#example').DataTable();
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log('jqXHR', jqXHR);
+          console.log('textStatus', textStatus);
+          console.log('errorThrown', errorThrown);
+        }
+      });
+    })
+  </script>
+</body>
+
+</html>

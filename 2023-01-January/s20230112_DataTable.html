@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataTable</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+</head>
+
+<body>
+  <table id="example" class="display" style="width:100%">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>電話</th>
+        <th>座右銘</th>
+        <th>工廠名稱</th>
+        <th>工廠地址</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>id</th>
+        <th>電話</th>
+        <th>座右銘</th>
+        <th>工廠名稱</th>
+        <th>工廠地址</th>
+      </tr>
+    </tfoot>
+  </table>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+    integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+  <script>
+    $(function () {
+      const Body = $('tbody')
+
+      $.ajax({
+        url: "./JS/factory.json",
+        type: "GET",
+        dataType: 'json',
+        success: function (res) {
+          let TextContent = '';
+          console.log(res)
+          $.each(res, function (key, value) {
+            console.log('key', key);
+            console.log('value', value);
+            TextContent += `<tr>
+                <td>${key + 1}</td>
+                <td>${value.tel}</td>
+                <td>${value.features}</td>
+                <td>${value.title}</td>
+                <td>${value.address}</td>
+              </tr>`;
+          });
+          Body.append(TextContent)
+          $('#example').DataTable();
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log('jqXHR', jqXHR);
+          console.log('textStatus', textStatus);
+          console.log('errorThrown', errorThrown);
+        }
+      });
+
+      // $.getJSON("./js/factory.json",
+      //   function (res, textStatus, jqXHR) {
+      //     console.log('res', res);
+      //     let textContent = "";
+      //     $.each(res, function (key, value) {
+      //       textContent += `
+      //                   <tr>
+      //                       <td>${key + 1}</td>
+      //                       <td>${value.tel}</td>
+      //                       <td>${value.features}</td>
+      //                       <td>${value.title}</td>
+      //                       <td>${value.address}</td>
+      //                   </tr>
+      //                   `;
+      //     });
+      //     Body.append(textContent);
+
+
+
+      //   }
+      // );
+    })
+  </script>
+</body>
+
+</html>
